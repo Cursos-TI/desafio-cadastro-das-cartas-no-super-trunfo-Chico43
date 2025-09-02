@@ -81,7 +81,9 @@ int main() {
     printf("===========CARTAS===========\n");
 
     printf("===========CARTA 01===========\n");
-    printf("Carta 1: %s - %s - %s\n", codigo1, estado1, cidade1);
+    printf("Código: %s\n", codigo1);
+    printf("Estado: %s\n", estado1);
+    printf("Cidade: %s\n", cidade1);
     printf("População: %d\n", populacao1);
     printf("Área: %.2f\n", area1);
     printf("PIB: %.2f\n", pib1);
@@ -96,7 +98,9 @@ int main() {
 
 
     printf("===========CARTA 02===========\n");
-    printf("Carta 2: %s - %s - %s\n", codigo2, estado2, cidade2);
+    printf("Código: %s\n", codigo2);
+    printf("Estado: %s\n", estado2);
+    printf("Cidade: %s\n", cidade2);
     printf("População: %d\n", populacao2);
     printf("Área: %.2f\n", area2);
     printf("PIB: %.2f\n", pib2);

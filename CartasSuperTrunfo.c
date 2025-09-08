@@ -1,10 +1,5 @@
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste Francisco
-
 #include <stdio.h>
+// TESTE FRANCISCO
 #include <locale.h>
 
 int main() {
@@ -80,11 +75,14 @@ int main() {
     scanf("%d", &pontosturismo2);
 
     printf("\n");
+    
     // Exibição dos dados
     printf("===========CARTAS===========\n");
     printf("\n");
 
+    
     printf("===========CARTA 01===========\n");
+    
     printf("Código: %s\n", codigo1);
     printf("Estado: %s\n", estado1);
     printf("Cidade: %s\n", cidade1);
@@ -102,6 +100,7 @@ int main() {
 
 
     printf("===========CARTA 02===========\n");
+    
     printf("Código: %s\n", codigo2);
     printf("Estado: %s\n", estado2);
     printf("Cidade: %s\n", cidade2);
@@ -117,21 +116,71 @@ int main() {
     printf("PIB per Capita: %.2f\n", pib_per_capita2);
     printf("\n");
 
-    // Comparação entre as cartas
-    printf("===========COMPARAÇÕES ENTRE CARTAS===========\n");
-    (populacao1 > populacao2) ? printf("A carta 1 tem maior população que a carta 2\n") : printf("A carta 2 tem maior população que a carta 1\n");
-    (area1 > area2) ? printf("A carta 1 tem maior área que a carta 2\n") : printf("A carta 2 tem maior área que a carta 1\n");
-    (pib1 > pib2) ? printf("A carta 1 tem maior PIB que a carta 2\n") : printf("A carta 2 tem maior PIB que a carta 1\n");
-    (pontosturismo1 > pontosturismo2) ? printf("A carta 1 tem mais pontos turísticos que a carta 2\n") : printf("A carta 2 tem mais pontos turísticos que a carta 1\n");
-    (densidade1 > densidade2) ? printf("A carta 1 tem maior densidade populacional que a carta 2\n") : printf("A carta 2 tem maior densidade populacional que a carta 1\n");
-    (pib_per_capita1 > pib_per_capita2) ? printf("A carta 1 tem maior PIB per capita que a carta 2\n") : printf("A carta 2 tem maior PIB per capita que a carta 1\n"); 
-    printf("\n");
+    // Comparação entre as cartas USANDO OPERADORES RELACIONAIS ">, <, >=, <=, ==, !=, IF, ELSE IF, ELSE"
+    printf("===========COMPARAÇÃO ENTRE CARTAS===========\n");
 
-    // Calculo de super poder
-    int superpoder1 = populacao1 + area1 + pib1 + pontosturismo1;
-    int superpoder2 = populacao2 + area2 + pib2 + pontosturismo2;
-    (superpoder1 > superpoder2) ? printf("A carta 1 é a vencedora com super poder de %d\n", superpoder1) : printf("A carta 2 é a vencedora com super poder de %d\n", superpoder2);  
-    printf("\n");
+    if (populacao1 > populacao2) {
+        printf("A carta 1 tem maior população que a carta 2.\n");
+    } else if (populacao1 < populacao2) {
+        printf("A carta 2 tem maior população que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm a mesma população.\n");
+    }
+
+    if (area1 > area2) {
+        printf("A carta 1 tem maior área que a carta 2.\n");
+    } else if (area1 < area2) {
+        printf("A carta 2 tem maior área que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm a mesma área.\n");
+    }
+
+    if (pib1 > pib2) {
+        printf("A carta 1 tem maior PIB que a carta 2.\n");
+    } else if (pib1 < pib2) {
+        printf("A carta 2 tem maior PIB que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm o mesmo PIB.\n");
+    }
+
+    if (pontosturismo1 > pontosturismo2) {
+        printf("A carta 1 tem mais pontos turísticos que a carta 2.\n");
+    } else if (pontosturismo1 < pontosturismo2) {
+        printf("A carta 2 tem mais pontos turísticos que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm o mesmo número de pontos turísticos.\n");
+    }
+    
+    // COMPARAÇÃO SUPER PODERES
+    
+    printf("\n===========COMPARAÇÃO SUPER PODERES===========\n");
+    if (densidade1 > densidade2) {
+        printf("A carta 1 tem maior densidade populacional que a carta 2.\n");
+    } else if (densidade1 < densidade2) {
+        printf("A carta 2 tem maior densidade populacional que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm a mesma densidade populacional.\n");
+    }
+
+    if (pib_per_capita1 > pib_per_capita2) {
+        printf("A carta 1 tem maior PIB per capita que a carta 2.\n");
+    } else if (pib_per_capita1 < pib_per_capita2) {
+        printf("A carta 2 tem maior PIB per capita que a carta 1.\n");
+    } else {
+        printf("As duas cartas têm o mesmo PIB per capita.\n");
+    }
+
+    //HARD CODED CARTA VENCEDORA
+    
+    printf("\n===========CARTA VENCEDORA===========\n");
+    
+    if ((populacao1 > populacao2) && (pib1 > pib2) && (pontosturismo1 > pontosturismo2) && (densidade1 > densidade2) && (pib_per_capita1 > pib_per_capita2)) {
+        printf("A carta 1 é a vencedora!\n");
+    } else if ((populacao2 > populacao1) && (pib2 > pib1) && (pontosturismo2 > pontosturismo1) && (densidade2 > densidade1) && (pib_per_capita2 > pib_per_capita1)) {
+        printf("A carta 2 é a vencedora!\n");
+    } else {
+        printf("As cartas estão empatadas!\n");
+    }
     
     return 0;
 } 
